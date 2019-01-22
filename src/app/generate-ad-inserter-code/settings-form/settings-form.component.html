@@ -1,0 +1,21 @@
+<form class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput placeholder="Site Id" formControlName="siteId">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Player Id" formControlName="playerId">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Playlist Id" formControlName="playlistId">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Video Title" formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Title Image URL" formControlName="titleImage">
+    </mat-form-field>
+    <mat-checkbox formControlName="shuffle">Shuffle</mat-checkbox>
+    <mat-checkbox formControlName="sticky">Sticky</mat-checkbox>
+    <mat-checkbox formControlName="float">Float</mat-checkbox>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>

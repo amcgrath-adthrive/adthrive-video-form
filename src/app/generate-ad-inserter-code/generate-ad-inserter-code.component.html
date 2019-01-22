@@ -1,0 +1,9 @@
+<div class="container">
+<mat-card class="card-container">
+   <app-settings-form (formSubmitted)="siteSettings = $event"></app-settings-form>
+</mat-card>  
+<mat-card class="card-container">
+    <app-code-viewer [siteSettings]="siteSettings"></app-code-viewer>
+</mat-card>
+</div>
+

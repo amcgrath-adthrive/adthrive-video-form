@@ -1,0 +1,24 @@
+<mat-tab-group (selectedTabChange)="tabChange($event)">
+  <mat-tab label="Collapse Code">
+    <pre>
+      <code id="collapseCode">
+        {{collapseCode}}
+      </code>
+    </pre>
+  </mat-tab>
+  <mat-tab label="Sekindo Sidebar">
+    <pre>
+      <code id="sekindoDesktopCode">
+        {{sekindoDesktopCode}}
+      </code>
+    </pre>
+  </mat-tab>
+  <mat-tab label="Sekindo Mobile">
+    <pre>
+        <code id="sekindoMobileCode">
+          {{sekindoMobileCode}}
+        </code>
+      </pre>
+  </mat-tab>
+</mat-tab-group>
+<button mat-raised-button color="primary" (click)="copyText()">Copy to Clipboard</button>
