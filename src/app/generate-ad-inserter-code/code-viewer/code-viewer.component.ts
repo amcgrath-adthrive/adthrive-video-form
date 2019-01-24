@@ -31,6 +31,8 @@ export class CodeViewerComponent implements OnInit {
     const sticky = this.siteSettings.sticky ? 'playerDiv.dataset.sticky = "";' : '';
     const shuffle = this.siteSettings.shuffle ? 'playerDiv.dataset.shuffle = "";' : '';
     const float = this.siteSettings.float ? 'playerDiv.dataset.float = "";' : '';
+
+    const image = this.siteSettings.titleImage ? `<img src="${this.siteSettings.titleImage}">` : '';
     this.collapseCode = `<script id="adthrive_collapse_script_desktop">
 
     const collapseExperimentCheck = setInterval(function(){
@@ -61,7 +63,7 @@ export class CodeViewerComponent implements OnInit {
           ${float}
 
           const span = document.createElement('span');
-          span.innerHTML = '<img src="${this.siteSettings.titleImage}">${this.siteSettings.videoTitle}';
+          span.innerHTML = '${image}${this.siteSettings.videoTitle}';
           span.className = 'copy';
 
           innerDiv.appendChild(span);
