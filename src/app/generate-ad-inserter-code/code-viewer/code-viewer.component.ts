@@ -39,6 +39,14 @@ export class CodeViewerComponent implements OnInit {
           var jwScript = document.createElement('script');
           jwScript.type = 'text/javascript';
           jwScript.src = 'https://content.jwplatform.com/libraries/${this.siteSettings.playerId}.js';
+          jwScript.onload = function(){
+            console.log('AI-jw loaded')
+            var collapseScript = document.createElement('script');
+            collapseScript.type = 'text/javascript';
+            collapseScript.src = 'https://ads.adthrive.com/video/52e41fac28963d1e058a0fdf.js';
+            collapseScript.onload = function(){ console.log('AI-collapse loaded')};
+            pNode.appendChild(collapseScript);
+          }
 
           var div = document.createElement('div');
           div.className = 'player-container';
@@ -62,16 +70,10 @@ export class CodeViewerComponent implements OnInit {
           innerDiv.appendChild(playerDiv);
           div.appendChild(innerDiv);
 
-          var collapseScript = document.createElement('script');
-          collapseScript.type = 'text/javascript';
-          collapseScript.src = 'https://ads.adthrive.com/video/${this.siteSettings.siteId}.js';
-          collapseScript.defer = true;
-
           var pNode = document.getElementById('adthrive_collapse_script_desktop').parentNode;
 
           pNode.appendChild(jwScript);
           pNode.appendChild(div);
-          pNode.appendChild(collapseScript);
         }
         clearInterval(collapseExperimentCheck);
       }
