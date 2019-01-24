@@ -33,34 +33,34 @@ export class CodeViewerComponent implements OnInit {
     const float = this.siteSettings.float ? 'playerDiv.dataset.float = "";' : '';
     this.collapseCode = `<script id="adthrive_collapse_script_desktop">
 
-    var collapseExperimentCheck = setInterval(function(){
+    const collapseExperimentCheck = setInterval(function(){
       if(window.adthrive && typeof window.adthrive.videoExperimentActive !== 'undefined'){
         if(!window.adthrive.videoExperimentActive) {
-          var jwScript = document.createElement('script');
+          const jwScript = document.createElement('script');
           jwScript.type = 'text/javascript';
           jwScript.src = 'https://content.jwplatform.com/libraries/${this.siteSettings.playerId}.js';
           jwScript.onload = function(){
-            var collapseScript = document.createElement('script');
+            const collapseScript = document.createElement('script');
             collapseScript.type = 'text/javascript';
             collapseScript.src = 'https://ads.adthrive.com/video/52e41fac28963d1e058a0fdf.js';
             pNode.appendChild(collapseScript);
           }
 
-          var div = document.createElement('div');
+          const div = document.createElement('div');
           div.className = 'player-container';
           div.setAttribute('style', 'margin: 0px auto;width: 90%');
 
-          var innerDiv = document.createElement('div');
+          const innerDiv = document.createElement('div');
           innerDiv.className = 'player-position';
 
-          var playerDiv = document.createElement('div');
+          const playerDiv = document.createElement('div');
           playerDiv.id = 'player';
           playerDiv.dataset.plid = '${this.siteSettings.playlistId}';
           ${sticky}
           ${shuffle}
           ${float}
 
-          var span = document.createElement('span');
+          const span = document.createElement('span');
           span.innerHTML = '<img src="${this.siteSettings.titleImage}">${this.siteSettings.videoTitle}';
           span.className = 'copy';
 
@@ -68,7 +68,7 @@ export class CodeViewerComponent implements OnInit {
           innerDiv.appendChild(playerDiv);
           div.appendChild(innerDiv);
 
-          var pNode = document.getElementById('adthrive_collapse_script_desktop').parentNode;
+          const pNode = document.getElementById('adthrive_collapse_script_desktop').parentNode;
 
           pNode.appendChild(jwScript);
           pNode.appendChild(div);
@@ -83,16 +83,16 @@ export class CodeViewerComponent implements OnInit {
   private updateSekindoDesktopCode() {
     this.sekindoDesktopCode = `<script id="adthrive_sekindo_script_desktop">
 
-    var sekindoDesktopExperimentCheck = setInterval(function(){
+    const sekindoDesktopExperimentCheck = setInterval(function(){
       if(window.adthrive && window.adthrive.videoExperimentOn !== 'undefined'){
         if(!window.adthrive.videoExperimentOn) {
 
-          var sekindoScript = document.createElement('script');
+          const sekindoScript = document.createElement('script');
           sekindoScript.type = 'text/javascript';
           sekindoScript.src = 'https://live.sekindo.com/live/liveView.php?s=78511&cbuster=%%CACHEBUSTER%%&pubUrl=%%REFERRER_URL_ESC_ESC%%&vp_contentFeedId=${this.siteSettings.playlistId}&subId=${this.siteSettings.siteId}';
           sekindoScript.defer = true;
 
-          var pNode = document.getElementById('adthrive_sekindo_script_desktop').parentNode;
+          const pNode = document.getElementById('adthrive_sekindo_script_desktop').parentNode;
 
           pNode.appendChild(sekindoScript);
         }
@@ -106,15 +106,15 @@ export class CodeViewerComponent implements OnInit {
   private updateSekindoMobileCode() {
     this.sekindoMobileCode = `<script id="adthrive_sekindo_script_mobile">
 
-    var sekindoMobileExperimentCheck = setInterval(function(){
+    const sekindoMobileExperimentCheck = setInterval(function(){
       if(window.adthrive && window.adthrive.videoExperimentOn !== 'undefined'){
         if(!window.adthrive.videoExperimentOn) {
-          var div = document.createElement('div');
-          var strong = document.createElement('strong');
+          const div = document.createElement('div');
+          const strong = document.createElement('strong');
           strong.innerHTML = '${this.siteSettings.videoTitle}';
-          var center = document.createElement('center');
+          const center = document.createElement('center');
 
-          var sekindoScript = document.createElement('script');
+          const sekindoScript = document.createElement('script');
           sekindoScript.type = 'text/javascript';
           sekindoScript.src = 'https://live.sekindo.com/live/liveView.php?s=87493&cbuster=%%CACHEBUSTER%%&pubUrl=%%REFERRER_URL_ESC_ESC%%&x=340&y=260&vp_contentFeedId=${this.siteSettings.playlistId}&subId=${this.siteSettings.siteId}';
           sekindoScript.defer = true;
@@ -122,7 +122,7 @@ export class CodeViewerComponent implements OnInit {
           div.appendChild(strong);
           div.appendChild(sekindoScript);
           center.appendChild(div);
-          var pNode = document.getElementById('adthrive_sekindo_script_mobile').parentNode;
+          const pNode = document.getElementById('adthrive_sekindo_script_mobile').parentNode;
 
           pNode.appendChild(center);
         }
