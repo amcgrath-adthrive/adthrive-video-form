@@ -44,7 +44,7 @@ export class CodeViewerComponent implements OnInit {
           jwScript.onload = function(){
             const collapseScript = document.createElement('script');
             collapseScript.type = 'text/javascript';
-            collapseScript.src = 'https://ads.adthrive.com/video/52e41fac28963d1e058a0fdf.js';
+            collapseScript.src = 'https://ads.adthrive.com/video/${this.siteSettings.siteId}.js';
             pNode.appendChild(collapseScript);
           }
 
