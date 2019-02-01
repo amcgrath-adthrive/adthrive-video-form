@@ -86,8 +86,8 @@ export class CodeViewerComponent implements OnInit {
     this.sekindoDesktopCode = `<script id="adthrive_sekindo_script_desktop">
 
     const sekindoDesktopExperimentCheck = setInterval(function(){
-      if(window.adthrive && window.adthrive.videoExperimentOn !== 'undefined'){
-        if(!window.adthrive.videoExperimentOn) {
+      if(window.adthrive && typeof window.adthrive.videoExperimentActive !== 'undefined'){
+        if(!window.adthrive.videoExperimentActive) {
 
           const sekindoScript = document.createElement('script');
           sekindoScript.type = 'text/javascript';
@@ -109,8 +109,8 @@ export class CodeViewerComponent implements OnInit {
     this.sekindoMobileCode = `<script id="adthrive_sekindo_script_mobile">
 
     const sekindoMobileExperimentCheck = setInterval(function(){
-      if(window.adthrive && window.adthrive.videoExperimentOn !== 'undefined'){
-        if(!window.adthrive.videoExperimentOn) {
+      if(window.adthrive && typeof window.adthrive.videoExperimentActive !== 'undefined'){
+        if(!window.adthrive.videoExperimentActive) {
           const div = document.createElement('div');
           const strong = document.createElement('strong');
           strong.innerHTML = '${this.siteSettings.videoTitle}';
