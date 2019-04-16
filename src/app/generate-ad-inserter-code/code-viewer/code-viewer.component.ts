@@ -10,7 +10,7 @@ import {MatTabChangeEvent} from '@angular/material/tabs';
 export class CodeViewerComponent implements OnInit {
   @Input() siteSettings: SiteSettings;
 
-  collapseCode = ' ';
+  collapseCode = '';
   sekindoDesktopCode = '';
   sekindoMobileCode = '';
 
